@@ -48,11 +48,11 @@
         </div>
     </div>
 </header>
-<div class="cus-div" id="skew">
-    <div class="content">
-        <h2>Product</h2>
-        <a href="#">Product</a>
-    </div>
+<section id="section1">
+    <h1>thankyou for choosing E-market</h1>
+    <div class="skewed"></div>
+
+</section>
 
 </div>
 
