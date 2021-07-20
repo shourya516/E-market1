@@ -1,0 +1,414 @@
+html {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+}
+header {
+    height: 90px;
+    background-color: white;
+}
+#headerBox {
+    width: 80%;
+    margin: auto;
+}
+#logoimg {
+    height: 100px;
+    width: 100px;
+    float: left;
+
+}
+.menu {
+    margin-top: 40px;
+
+
+}
+.menu li {
+    list-style-type: none;
+    display: inline;
+    color: #8e8e8e;
+    padding-right: 15px;
+    float: left;
+
+}
+.column {
+    width: 33%;
+    float: left;
+    /*border: 1px solid black;*/
+}
+#LoginLink {
+    background-color: #6dc77a;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    padding: 10px 26px;
+    display: inline-block;
+    margin-top: 30px;
+    float: right;
+    transition: 0.5s ;
+
+
+}
+#LoginLink:hover {
+    opacity: .5;
+}
+.main-container {
+    margin: 0;
+    height:740px;
+}
+#container2 {
+    width: 100%;
+    height: 740px;
+    margin: 0;
+    position: absolute;
+    animation: animate 25s  infinite;
+    /* background: linear-gradient(rgba(0,0,0,0.7)rgba(0,0,0,0.7)); */
+    background-size: cover;
+
+}
+@keyframes animate{
+
+    0%,100% {
+        background-image:url(../img/Vegetablespic.jpg);
+
+    }
+    25% {
+        background-image:url(../img/WheatImage.jpg);
+    }
+    50% {
+        background-image:url(../img/lentils.jpg);
+    }
+    75% {
+        background-image:url(../img/oil.jpg);
+    }
+}
+.Content {
+    width: 60%;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Content h1{
+    color: whitesmoke;
+    text-align: center;
+    font-size: 4em;
+    font-weight: 200;
+}
+.Content p {
+
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 300;
+}
+.ContactDetails {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 200;
+
+
+}
+
+.form1 {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 150px;
+
+}
+
+.form1 input {
+    margin: 0;
+    width: 30%;
+    height: 30px;
+    font-family: sans-serif;
+    border-radius: 10px;
+    border: none;
+}
+
+.form1 button {
+    width: 20%;
+    height: 30%;
+    background-color: greenyellow;
+    margin-left: 270px;
+    margin-top: 5px;
+    font-family: sans-serif;
+    border-radius: 10px;
+    height: 30px;
+    border: none;
+
+}
+
+.Steps {
+    background-color: #f6f8fa;
+    width: 100%;
+    height: 600px;
+    margin-top: 740px;
+}
+
+#step1 {
+    padding-top: 30px;
+    text-align: center;
+    color: #8e8e8e;
+}
+
+#step2 {
+    padding-top: 30px;
+    text-align: center;
+    color: #8e8e8e;
+}
+
+#step3 {
+    padding-top: 30px;
+    text-align: center;
+    color: #8e8e8e;
+}
+
+#end {
+
+    padding-top: 30px;
+    text-align: center;
+    color: #8e8e8e;
+}
+
+footer {
+    background-color: black ;
+    height: 500px;
+    background-image:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),url(../img/farming1.jpg);
+    background-size: cover;
+}
+.social-footer {
+    width: 33%;
+    float: left;
+    height: 40%;
+}
+.social-footer1 {
+    width: 34%;
+    float: left;
+    height: 40%;
+
+}
+.social-footer:hover {
+    background-color: black;
+    opacity: .5;
+    transition: 0.5s;
+}
+.social-footer1:hover {
+    background-color: black;
+    opacity: .5;
+    transition: 0.5s;
+}
+.center {
+    width: 50px;
+    margin: auto;
+    padding-top: 60px;
+}
+.imgclass3 {
+    padding-left: 150px;
+    padding-top: 20px;
+
+}
+.copyright {
+    color: #ffffff;
+    font-size: .9em;
+    text-align: center;
+    padding-top: 180px;
+    clear: both;
+}
+/* Css for main page ends here */
+
+/* ------------------------------------------------------------------------------------------------- */
+
+/* Css for product starts here */
+
+.product-container {
+    background-color: #f6f8fa ;
+    color: #8e8e8e;
+    margin: 0;
+
+
+
+}
+.product-items {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+
+}
+
+.itemdiscription1 {
+    width: 90%;
+
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom:0;
+
+}
+.itemdiscription2 {
+    width: 90%;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    margin-bottom:0;
+
+}
+.itemdiscription3 {
+    width: 90%;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    margin-bottom:0;
+
+    height: 150px;
+}
+
+/* Css for products end here */
+/* --------------------------------------------------------------------------------------------- */
+/* Css for form starts here */
+.formcontainer {
+    width:100%;
+    height: 740px;
+
+    background: rgb(2,0,36);
+    /* background: linear-gradient(45deg, rgba(2,0,36,1), rgba(32,221,127,1) , rgba(0,212,255,1) ); */
+    background-image: linear-gradient(rgba(0,0,0,0.4) ,rgba(0,0,0,0.4)),url(../img/farming2.jpg);
+
+    background-size: cover;
+    position: absolute;
+
+}
+.formcontainer form {
+    transition: 1s;
+}
+.signinform {
+    background-color: white;
+    width: 340px;
+    /* height: 650px;  */
+    height: 400px;
+    position: relative;
+    margin: 6% auto;
+    opacity: 1;
+    padding: 5px;
+    transition: 1s;
+    overflow: hidden;
+}
+.button-box {
+    width: 220px;
+    height: 30px;
+    margin: 35px auto;
+    position: relative;
+    border-radius: 30px;
+
+
+}
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+
+}
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    /* background: linear-gradient(to right,#ff105f,#ffad06);   */
+    border-radius: 30px;
+}
+.input-group {
+    top: 120px;
+    position: absolute;
+    width: 280px;
+
+}
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top:0 ;
+    border-right: 0;
+    border-bottom: 1px solid black;
+    outline:none;
+    background: transparent;
+}
+#consumerType {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top:0 ;
+    border-right: 0;
+    border-bottom: 1px solid black;
+    outline:none;
+    background: transparent;
+}
+
+.submit-btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 30px;
+    outline: none;
+}
+#btnholder {
+    left: 450px;
+
+}
+#login {
+    left: 40px;
+}
+#customer {
+    left: 450px;
+}
+.toggle-btn1 {
+    cursor: pointer;
+    padding: 10px 10px;
+    border-radius: 30px;
+}
+#Vendor {
+    left: 450px;
+}
+#Dealer {
+    left: 450px;
+}
+
+/*Css for customer other pages*/
+#welcomeholder{
+
+    margin-top: 40px;
+    margin-left: 5px;
+    display: inline-block;
+    font-weight: bold;
+    color: black;
+}
+.menu1 {
+    margin-top: 40px;
+}
+.menu1 li {
+    list-style-type: none;
+    display: inline;
+    color: #8e8e8e;
+    padding-right: 90px;
+    float: left;
+    margin-left: -70px;
+}
+
