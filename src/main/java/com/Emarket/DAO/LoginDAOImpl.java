@@ -96,14 +96,15 @@ public class LoginDAOImpl implements LoginDAO{
            vendorObj= this.jdbcTemplate.query(query, new RowMapper() {
                 @Override
                 public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
-                    vendor.setVendorName(rs.getString(1));
-                    vendor.setVendorMob(rs.getLong(2));
-                    vendor.setVendorEmail(rs.getString(3));
-                    vendor.setVendorPassword(rs.getString(4));
-                    vendor.setVendorAddress(rs.getString(5));
-                    vendor.setVendorCity(rs.getString(6));
-                    vendor.setVendorState(rs.getString(7));
-                    vendor.setVendorPincode(rs.getString(8));
+                    vendor.setVendorId(rs.getInt(1));
+                    vendor.setVendorName(rs.getString(2));
+                    vendor.setVendorMob(rs.getLong(3));
+                    vendor.setVendorEmail(rs.getString(4));
+                    vendor.setVendorPassword(rs.getString(5));
+                    vendor.setVendorAddress(rs.getString(6));
+                    vendor.setVendorCity(rs.getString(7));
+                    vendor.setVendorState(rs.getString(8));
+                    vendor.setVendorPincode(rs.getString(9));
                     user.setVendor(vendor);
                     return vendor;
                 }

@@ -428,3 +428,56 @@ footer {
     border-color: transparent #fff transparent transparent;
     border-style: solid;
 }
+.addproduct {
+    width: 100%;
+    height:100vh;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../img/productform-background.jpg);
+    background-size: cover;
+
+
+}
+.formcont {
+    display: inline-block;
+    width: 30%;
+    height: 400px;
+    /* background-color: white; */
+    margin-top: 30px;
+    margin-left: -50px;
+
+}
+
+#selector{
+    width: 50%;
+    margin-top: 20px;
+    margin-left: 90px;
+    margin-bottom: 10px;
+    padding: 10px 0 ;
+    border-top: none;
+    border-left: none;
+    border-right: none ;
+
+}
+.product-in {
+    width: 99%;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    /*background: transparent*/
+
+}
+.product-in1 {
+    width: 99%;
+    margin-bottom: 2px;
+    padding: 10px 0;
+}
+.submit-prod {
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    background-color: red;
+}
+.reset-prod {
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    background-color: red;
+}

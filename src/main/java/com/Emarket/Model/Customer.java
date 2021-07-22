@@ -1,13 +1,24 @@
 package com.Emarket.Model;
 
+
+import javax.validation.constraints.NotEmpty;
+
 public class Customer {
+    @NotEmpty
     private String custName;
+    @NotEmpty
     private Long custMob;
+    @NotEmpty
     private String custEmail;
+    @NotEmpty
     private String custPassword;
+    @NotEmpty
     private String custAddress;
+    @NotEmpty
     private String custState;
+    @NotEmpty
     private String custPincode;
+    @NotEmpty
     private String custCity;
 
     public String getCustName() {

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 
 @Controller
-//@SessionAttributes("user")
+
 public class LoginController {
 
     @Autowired
@@ -52,11 +52,17 @@ public class LoginController {
         System.out.println(user.getDealer()!=null);
         System.out.println("this is vendor");
         System.out.println(user.getVendor()!=null);
+        System.out.println("page - "+page);
+        System.out.println("----------------------");
 
         HttpSession httpSession=request.getSession();
         httpSession.setAttribute("current-user",user);
         if(page.equalsIgnoreCase("failure")) {
             httpSession.setAttribute("message","username or password doesnot match");
+
+            return "redirect:/login";
+        } else if(page.equalsIgnoreCase("register")) {
+            httpSession.setAttribute("message","please Register");
             return "redirect:/login";
         }
         else if(page.equalsIgnoreCase("customer")) {
@@ -80,5 +86,9 @@ public class LoginController {
     @GetMapping("/customerpage")
     public String getcustomerPage() {
         return "customerpage";
+    }
+    @GetMapping("/vendorpage")
+    public String getVendorPage() {
+        return "vendorpage";
     }
 }

@@ -1,6 +1,7 @@
 package com.Emarket.Model;
 
 public class Vendor {
+    private int vendorId;
     private String vendorName;
     private Long vendorMob;
     private String vendorEmail;
@@ -72,6 +73,14 @@ public class Vendor {
 
     public void setVendorCity(String vendorCity) {
         this.vendorCity = vendorCity;
+    }
+
+    public int getVendorId() {
+        return vendorId;
+    }
+
+    public void setVendorId(int vendorId) {
+        this.vendorId = vendorId;
     }
 
     @Override
