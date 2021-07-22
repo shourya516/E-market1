@@ -3,8 +3,11 @@ package com.Emarket.Service;
 import com.Emarket.DAO.CustomerDAOImpl;
 import com.Emarket.DAO.DealerDAOImpl;
 import com.Emarket.DAO.VendorDAOImpl;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class RegisterService {
@@ -42,4 +45,5 @@ public class RegisterService {
     public void setVendorDAOimpl(VendorDAOImpl vendorDAOimpl) {
         this.vendorDAOimpl = vendorDAOimpl;
     }
+
 }

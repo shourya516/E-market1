@@ -37,7 +37,7 @@
             <nav>
                 <ul class="menu1" style="padding-left: 100px;">
                     <a href="/vendorpage/addProducts" style="text-decoration: none;"><li>Product</li></a>
-                    <a href="/products" style="text-decoration: none;"><li>Available</li></a>
+                    <a href="/vendorpage/availableproducts" style="text-decoration: none;"><li>Available</li></a>
                     <a href="/cart" style="text-decoration: none;"><li>Sold</li></a>
                 </ul>
             </nav>

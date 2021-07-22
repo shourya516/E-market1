@@ -23,7 +23,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Customer Page</title>
+    <title>Vendor Page</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/agriwebsite.css">
 </head>
 <body>
@@ -36,13 +36,13 @@
             <nav>
                 <ul class="menu1" style="padding-left: 100px;">
                     <a href="/vendorpage/addProducts" style="text-decoration: none;"><li>Product</li></a>
-                    <a href="/vendorpage/products" style="text-decoration: none;"><li>Available</li></a>
+                    <a href="/vendorpage/availableproducts" style="text-decoration: none;"><li>Available</li></a>
                     <a href="/vendorpage/sold" style="text-decoration: none;"><li>Sold</li></a>
                 </ul>
             </nav>
         </div>
         <div class="column" >
-            <span id="welcomeholder">Welcome <%=user.getVendor().getVendorName()%>!</span>
+            <span id="welcomeholder">Welcome <%= user.getVendor().getVendorName()%>!</span>
             <a href="/logout" id="LoginLink">Logout here</a>
         </div>
     </div>

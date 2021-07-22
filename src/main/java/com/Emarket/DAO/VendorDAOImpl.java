@@ -14,6 +14,6 @@ public class VendorDAOImpl implements VendorDAO {
     public void registerVendor(Vendor vendor) {
         String query="insert into vendor(vendorname,mobileno, emailid, password,address, city, State,postalcode)values(?,?,?,?,?,?,?,?)";
         this.jdbcTemplate.update(query,vendor.getVendorName(),vendor.getVendorMob(),vendor.getVendorEmail(),vendor.getVendorPassword(),vendor.getVendorAddress(),vendor.getVendorCity(),vendor.getVendorState(),vendor.getVendorPincode());
-        System.out.println("Detais added to vendor table");
+        System.out.println("Detais of "+vendor.getVendorName() +" added to vendor table");
     }
 }
