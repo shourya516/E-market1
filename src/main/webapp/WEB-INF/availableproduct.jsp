@@ -1,4 +1,6 @@
 <%@ page import="com.Emarket.Model.User" %>
+<%@ page import="com.Emarket.Model.Product" %>
+<%@ page import="java.util.List" %>
 <%
 
     User user=(User)session.getAttribute("current-user");
@@ -12,6 +14,7 @@
         response.sendRedirect("login");
         return;
     }
+
 
 %>
 
@@ -52,5 +55,6 @@
 </header>
 <h3>Available product by the vendor is </h3>
 <h3>${productList}</h3>
+<h3></h3>
 </body>
 </html>

@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 
 
 @Controller
-@SessionAttributes("vendor")
+//@SessionAttributes("vendor")
 public class LoginController {
 
 //    @Autowired
@@ -43,6 +43,7 @@ public class LoginController {
     @PostMapping("/authenticate")
     public String authenticateUser(@ModelAttribute("user") User user, Model model,HttpServletRequest request) {
         String page=authenticationService.pageRedirectedLogin(user);
+
 //        Customer customer1= user.getCustomer();
 //        Admin admin1= user.getAdmin();
         model.addAttribute("vendor",user.getVendor());
@@ -93,6 +94,7 @@ public class LoginController {
     }
     @GetMapping("/vendorpage")
     public String getVendorPage() {
+
         return "vendorpage";
     }
 }
