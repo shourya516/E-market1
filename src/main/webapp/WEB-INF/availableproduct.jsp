@@ -15,7 +15,6 @@
         return;
     }
 
-
 %>
 
 
@@ -53,8 +52,46 @@
         </div>
     </div>
 </header>
-<h3>Available product by the vendor is </h3>
-<h3>${productList}</h3>
+<div style="text-align: center;">
+<h3>Available product by "<%=user.getVendor().getVendorName()%>" is ${size}</h3>
+</div>
+<div class="product-type-container">
+
+
+    <div class="product-type">
+        <div id="categories1">Categories</div>
+        <a href="#"> <div class="categories">
+            All Products
+        </div> </a>
+        <c:forEach var="category" items="${categoryList}">
+        <a href="#"> <div class="categories">
+            ${category.category}
+        </div> </a>
+        </c:forEach>
+    </div>
+
+    <div class="product-available-container">
+        <c:forEach var="product" items="${productList}">
+        <div class="product-box">
+<%--            <p>${product.productName}</p>--%>
+            <div class="product-image">
+
+            </div>
+
+        </div>
+        </c:forEach>
+    </div>
+
+</div>
+
+<%--    <div style="width: 80%;margin: auto;">--%>
+<%--<c:forEach var="product" items="${productList}">--%>
+<%--    <h3>${product.productName}</h3>--%>
+
+<%--</c:forEach>--%>
+<%--    </div>--%>
+</div>
+<h3></h3>
 <h3></h3>
 </body>
 </html>

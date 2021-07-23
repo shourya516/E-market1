@@ -1,5 +1,6 @@
 package com.Emarket.DAO;
 
+import com.Emarket.Model.Category;
 import com.Emarket.Model.Product;
 import com.Emarket.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,11 +29,12 @@ public class ProductDAOImpl implements ProductDAO {
     @Override
     public List<Product> getproductList(int id) {
         List<Product> productList=new ArrayList<>();
-        Product product1=new Product();
-        String query="Select * from product_table where vendorid=?";
+
+        String query="Select * from product_table";
         productList=this.jdbcTemplate.query(query, new RowMapper() {
             @Override
             public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+                   Product product1=new Product();
                    product1.setProductId(rs.getString(1));
                    product1.setProductType(rs.getString(2));
                    product1.setProductName(rs.getString(3));
@@ -44,8 +46,20 @@ public class ProductDAOImpl implements ProductDAO {
                    product1.setInStock(rs.getString(9));
                    return product1;
             }
-        },id);
+        });
         return productList;
+    }
+    public List<Category> getCategoryList(){
+        String query="select * from productcategory";
+        return this.jdbcTemplate.query(query, new RowMapper() {
+            @Override
+            public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+                Category category=new Category();
+                category.setCategoryId(rs.getInt(1));
+                category.setCategory(rs.getString(2));
+                return category;
+            }
+        });
     }
 
 }

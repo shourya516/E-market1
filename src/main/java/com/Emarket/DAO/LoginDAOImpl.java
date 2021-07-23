@@ -33,13 +33,14 @@ public class LoginDAOImpl implements LoginDAO{
 
         if (user.getConsumerType().equalsIgnoreCase("Customer")) {
 
-            Customer customer = new Customer();
+
 
             String query = "Select * from customer where emailid=?";
 
                   customerObj= this.jdbcTemplate.query(query, new RowMapper() {
                     @Override
                     public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Customer customer = new Customer();
 
                         customer.setCustName(rs.getString(1));
                         customer.setCustMob(rs.getLong(2));
@@ -55,7 +56,7 @@ public class LoginDAOImpl implements LoginDAO{
 
                 }, user.getEmailid());
                 if(customerObj.size()==1){
-                if (user.getEmailid().equalsIgnoreCase(customer.getCustEmail()) && user.getLoginPassword().equals(customer.getCustPassword())) {
+                if (user.getEmailid().equalsIgnoreCase(user.getCustomer().getCustEmail()) && user.getLoginPassword().equals(user.getCustomer().getCustPassword())) {
                     return "customer";
                 } else {
                     return "failure";
@@ -67,11 +68,12 @@ public class LoginDAOImpl implements LoginDAO{
 
 
         else if (user.getConsumerType().equalsIgnoreCase("admin")) {
-           Admin admin=new Admin();
+
            String query="select * from admin where email= ?";
            adminObj=this.jdbcTemplate.query(query, new RowMapper() {
                @Override
                public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+                   Admin admin=new Admin();
                    admin.setName(rs.getString(2));
                    admin.setEmailId(rs.getString(3));
                    admin.setPassword(rs.getString(4));
@@ -80,7 +82,7 @@ public class LoginDAOImpl implements LoginDAO{
                }
            },user.getEmailid());
            if(adminObj.size()==1) {
-               if (user.getEmailid().equalsIgnoreCase(admin.getEmailId()) && user.getLoginPassword().equals(admin.getPassword())) {
+               if (user.getEmailid().equalsIgnoreCase(user.getAdmin().getEmailId()) && user.getLoginPassword().equals(user.getAdmin().getPassword())) {
                    return "admin";
                } else {
                    return "failure";
@@ -91,11 +93,12 @@ public class LoginDAOImpl implements LoginDAO{
            }
         }
         else if(user.getConsumerType().equalsIgnoreCase("vendor")) {
-            Vendor vendor=new Vendor();
+
             String query="select * from vendor where emailid=?";
            vendorObj= this.jdbcTemplate.query(query, new RowMapper() {
                 @Override
                 public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    Vendor vendor=new Vendor();
                     vendor.setVendorId(rs.getInt(1));
                     vendor.setVendorName(rs.getString(2));
                     vendor.setVendorMob(rs.getLong(3));
@@ -110,7 +113,7 @@ public class LoginDAOImpl implements LoginDAO{
                 }
             },user.getEmailid());
            if(vendorObj.size()==1)
-            if(user.getEmailid().equalsIgnoreCase(vendor.getVendorEmail())&& user.getLoginPassword().equals(vendor.getVendorPassword())){
+            if(user.getEmailid().equalsIgnoreCase(user.getVendor().getVendorEmail())&& user.getLoginPassword().equals(user.getVendor().getVendorPassword())){
                 return "vendor";
             }
             else {
@@ -121,11 +124,12 @@ public class LoginDAOImpl implements LoginDAO{
            }
         }
         else {
-            Dealer dealer=new Dealer();
+
             String query="select * from dealer where emailid=?";
             dealerObj=this.jdbcTemplate.query(query, new RowMapper() {
                 @Override
                 public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    Dealer dealer=new Dealer();
                     dealer.setDealerName(rs.getString(1));
                     dealer.setDealerMob(rs.getLong(2));
                     dealer.setDealerEmail(rs.getString(3));
@@ -140,7 +144,7 @@ public class LoginDAOImpl implements LoginDAO{
                 }
             },user.getEmailid());
             if(dealerObj.size()==1) {
-                if (user.getEmailid().equalsIgnoreCase(dealer.getDealerEmail()) && user.getLoginPassword().equals(dealer.getDealerPassword())) {
+                if (user.getEmailid().equalsIgnoreCase(user.getDealer().getDealerEmail()) && user.getLoginPassword().equals(user.getDealer().getDealerPassword())) {
                     return "dealer";
                 } else {
                     return "failure";

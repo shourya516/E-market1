@@ -2,6 +2,7 @@ package com.Emarket.Controller;
 
 
 import com.Emarket.DAO.ProductDAOImpl;
+import com.Emarket.Model.Category;
 import com.Emarket.Model.Product;
 import com.Emarket.Model.Vendor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,13 +43,12 @@ public class VendorPageController {
     @GetMapping("/availableproducts")
     public String getavailableproducts(@RequestParam("id") int id,Model model ) {
         productList=productDAOimpl.getproductList(id);
+        List<Category> categorieList=productDAOimpl.getCategoryList();
         model.addAttribute("productList",productList);
+        model.addAttribute("size",productList.size());
+        model.addAttribute("categoryList",categorieList);
         System.out.println(id);
-        System.out.println(productList.size());
-
 //        System.out.println(productList.size());
-//        System.out.println(productList.get(1).getProductId());
-
         return "availableproduct";
     }
 //    @GetMapping("/availableproducts")
