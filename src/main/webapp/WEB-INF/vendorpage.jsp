@@ -36,9 +36,9 @@
         <div class="column">
             <nav>
                 <ul class="menu1" style="padding-left: 100px;">
-                    <a href="/vendorpage/addProducts" style="text-decoration: none;"><li>Product</li></a>
-                    <a href="/vendorpage/availableproducts?id=<%= user.getVendor().getVendorId()%>"<%out.print(user.getVendor().getVendorId());%>" style="text-decoration: none;"><li>Available</li></a>
-                    <a href="/cart" style="text-decoration: none;"><li>Sold</li></a>
+                    <a href="${pageContext.request.contextPath}/vendorpage/addProducts" style="text-decoration: none;"><li>Product</li></a>
+                    <a href="${pageContext.request.contextPath}/vendorpage/availableproducts?id=<%= user.getVendor().getVendorId()%>"<%out.print(user.getVendor().getVendorId());%>" style="text-decoration: none;"><li>Available</li></a>
+                    <a href="${pageContext.request.contextPath}/vendorpage/sold" style="text-decoration: none;"><li>Sold</li></a>
                 </ul>
             </nav>
         </div>

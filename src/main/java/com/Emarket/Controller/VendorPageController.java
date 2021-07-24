@@ -18,11 +18,10 @@ import java.util.List;
 //@SessionAttributes("vendor")
 public class VendorPageController {
     List<Product> productList=new ArrayList<>();
-
     @Autowired
     private ProductDAOImpl productDAOimpl;
     Vendor vendor=new Vendor();
-//    int vendorid=vendor.getVendorId();
+
 
 
     @GetMapping("/addProducts")
@@ -47,18 +46,10 @@ public class VendorPageController {
         model.addAttribute("productList",productList);
         model.addAttribute("size",productList.size());
         model.addAttribute("categoryList",categorieList);
-        System.out.println(id);
-//        System.out.println(productList.size());
+
         return "availableproduct";
     }
-//    @GetMapping("/availableproducts")
-//    public String getavailableproducts(@ModelAttribute("vendor") Vendor vendor,Model model) {
-//        productList=productDAOimpl.getproductList(vendor.getVendorId());
-//        model.addAttribute("productList",productList);
-//        System.out.println(productList.size());
-//        System.out.println(productList.get(1).getProductId());
-//        return "availableproduct";
-//    }
+
     @GetMapping("/sold")
     public String soldproducts() {
         return null;

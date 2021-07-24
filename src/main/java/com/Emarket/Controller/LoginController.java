@@ -24,22 +24,6 @@ public class LoginController {
     @Autowired
     private AuthenticationService authenticationService;
 
-//    @PostMapping("/customerRegistration")
-//    public String registerCustomer(@ModelAttribute("customer") Customer customer) {
-//        registerService.getCustomerDAOimpl().insertCustomerDetails(customer);
-//        System.out.println(customer);
-//        return "homepage";
-//    }
-//    @PostMapping("/dealerRegistration")
-//    public String registerDealer(@ModelAttribute("dealer")Dealer dealer){
-//        registerService.getDealerDAOimpl().dealerRegistration(dealer);;
-//        return "homepage";
-//    }
-//    @PostMapping("/vendorRegistration")
-//    public String vendorRegister(@ModelAttribute("vendor") Vendor vendor) {
-//       registerService.getVendorDAOimpl().registerVendor(vendor);
-//       return "homepage";
-//    }
     @PostMapping("/authenticate")
     public String authenticateUser(@ModelAttribute("user") User user, Model model,HttpServletRequest request) {
         String page=authenticationService.pageRedirectedLogin(user);

@@ -1,6 +1,4 @@
 <%@ page import="com.Emarket.Model.User" %>
-<%@ page import="com.Emarket.Model.Product" %>
-<%@ page import="java.util.List" %>
 <%
 
     User user=(User)session.getAttribute("current-user");
@@ -41,7 +39,7 @@
             <nav>
                 <ul class="menu1" style="padding-left: 100px;">
                     <a href="${pageContext.request.contextPath}/vendorpage/addProducts" style="text-decoration: none;"><li>Product</li></a>
-                    <a href="${pageContext.request.contextPath}/vendorpage/availableproducts" style="text-decoration: none;"><li>Available</li></a>
+                    <a href="${pageContext.request.contextPath}/vendorpage/availableproducts?id=<%= user.getVendor().getVendorId()%>"<%out.print(user.getVendor().getVendorId());%> style="text-decoration: none;"><li>Available</li></a>
                     <a href="${pageContext.request.contextPath}/vendorpage/sold" style="text-decoration: none;"><li>Sold</li></a>
                 </ul>
             </nav>
@@ -73,23 +71,16 @@
     <div class="product-available-container">
         <c:forEach var="product" items="${productList}">
         <div class="product-box">
-<%--            <p>${product.productName}</p>--%>
             <div class="product-image">
-
+                ${product.productName}
             </div>
-
+            ${product.productDescription}
         </div>
         </c:forEach>
     </div>
 
 </div>
 
-<%--    <div style="width: 80%;margin: auto;">--%>
-<%--<c:forEach var="product" items="${productList}">--%>
-<%--    <h3>${product.productName}</h3>--%>
-
-<%--</c:forEach>--%>
-<%--    </div>--%>
 </div>
 <h3></h3>
 <h3></h3>
