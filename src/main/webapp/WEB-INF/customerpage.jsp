@@ -1,4 +1,6 @@
 <%@ page import="com.Emarket.Model.User" %>
+<%@ page import="com.Emarket.Model.Product" %>
+<%@ page import="java.util.List" %>
 <%
 
     User user=(User)session.getAttribute("current-user");
@@ -18,7 +20,6 @@
          pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
@@ -36,8 +37,8 @@
         <div class="column">
             <nav>
                 <ul class="menu1" style="padding-left: 100px;">
-                    <a href="${pageContext.request.contextPath}/customerpage/allproducts" style="text-decoration: none;"><li>Product</li></a>
-                    <a href="${pageContext.request.contextPath}/customerpage/allproducts" style="text-decoration: none;"><li>History</li></a>
+                    <a href="${pageContext.request.contextPath}/customerpage/allproducts?category=all" style="text-decoration: none;"><li>Product</li></a>
+                    <a href="${pageContext.request.contextPath}/customerpage/History" style="text-decoration: none;"><li>History</li></a>
                     <a href="${pageContext.request.contextPath}/customerpage/cart" style="text-decoration: none;"><li>Cart</li></a>
                 </ul>
             </nav>

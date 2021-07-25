@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 
 
 @Controller
-//@SessionAttributes("vendor")
+@SessionAttributes({"vendor","customer","dealer","admin"})
 public class LoginController {
 
 //    @Autowired
@@ -55,16 +55,19 @@ public class LoginController {
             return "redirect:/login";
         }
         else if(page.equalsIgnoreCase("customer")) {
-
+            model.addAttribute("customer",user.getCustomer());
             return "redirect:/customerpage";
         }
         else if(page.equalsIgnoreCase("admin")) {
+            model.addAttribute("admin",user.getAdmin());
             return "redirect:/adminpage";
         }
         else if(page.equalsIgnoreCase("vendor")) {
+            model.addAttribute("vendor",user.getVendor());
             return "redirect:/vendorpage";
         }
         else {
+            model.addAttribute("dealer",user.getDealer());
              return "redirect:/dealerpage";
         }
     }

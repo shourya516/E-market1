@@ -1,6 +1,7 @@
 package com.Emarket.Model;
 
 public class Dealer {
+    private int dealerId;
   private String dealerName;
   private Long dealerMob;
   private String dealerEmail;
@@ -96,5 +97,13 @@ public class Dealer {
                 ", dealerPincode='" + dealerPincode + '\'' +
                 ", dealerCity='" + dealerCity + '\'' +
                 '}';
+    }
+
+    public int getDealerId() {
+        return dealerId;
+    }
+
+    public void setDealerId(int dealerId) {
+        this.dealerId = dealerId;
     }
 }

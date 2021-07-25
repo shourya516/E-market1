@@ -2,8 +2,11 @@ package com.Emarket.Model;
 
 
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 public class Customer {
+
+    private  int customerId;
     @NotEmpty
     private String custName;
     @NotEmpty
@@ -20,6 +23,7 @@ public class Customer {
     private String custPincode;
     @NotEmpty
     private String custCity;
+    private List<Product> cartList;
 
     public String getCustName() {
         return custName;
@@ -83,6 +87,22 @@ public class Customer {
 
     public void setCustCity(String custCity) {
         this.custCity = custCity;
+    }
+
+    public List<Product> getCartList() {
+        return cartList;
+    }
+
+    public void setCartList(List<Product> cartList) {
+        this.cartList = cartList;
+    }
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
     @Override

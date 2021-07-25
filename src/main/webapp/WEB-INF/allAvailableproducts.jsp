@@ -1,4 +1,10 @@
 <%@ page import="com.Emarket.Model.User" %>
+<%@ page import="com.Emarket.DAO.ProductDAOImpl" %>
+<%@ page import="com.Emarket.Model.Product" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.Emarket.Model.Category" %>
+<%@ page import="org.springframework.jdbc.core.JdbcTemplate" %>
+<%@ page import="java.util.ArrayList" %>
 <%
 
     User user=(User)session.getAttribute("current-user");
@@ -13,7 +19,6 @@
         return;
     }
     String cat=request.getParameter("category");
-//    List<Product> cartList;
 
 
 %>
@@ -43,7 +48,7 @@
                 <ul class="menu1" style="padding-left: 100px;">
                     <a href="${pageContext.request.contextPath}/customerpage/allproducts" style="text-decoration: none;"><li>Product</li></a>
                     <a href="${pageContext.request.contextPath}/customerpage/orderhistory" style="text-decoration: none;"><li>History</li></a>
-                    <a href="${pageContext.request.contextPath}/customerpage/cart" style="text-decoration: none;"><li>Cart [${fn:length(cartProduct)}]</li></a>
+                    <a href="${pageContext.request.contextPath}/customerpage/cart" style="text-decoration: none;"><li>Cart [${productsInCart}]</li></a>
                 </ul>
             </nav>
         </div>
@@ -84,7 +89,7 @@
                             </div>
                             <div class="product-description"></div>
                             <div class="buy-cart-button">
-                                <a href="${pageContext.request.contextPath}/customerpage/addtocart?productid=${allproduct.productId}"><button  class="addtocart">Add to cart</button></a>
+                                <a href="${pageContext.request.contextPath}/customerpage/addtocart?productid=${allproduct.productId}&category=${type}&id=<%= user.getCustomer().getCustomerId()%>"><button  class="addtocart">Add to cart</button></a>
                                 <span>&#8377; ${allproduct.price}</span>
                             </div>
                         </div>
@@ -102,7 +107,7 @@
                         </div>
                         <div class="product-description"></div>
                         <div class="buy-cart-button">
-                            <a href="${pageContext.request.contextPath}/customerpage/addtocart?productid=${allproduct.productId}"><button  class="addtocart">Add to cart</button></a>
+                            <a href="${pageContext.request.contextPath}/customerpage/addtocart?productid=${allproduct.productId}&category=${type}&id=<%= user.getCustomer().getCustomerId()%>"><button  class="addtocart">Add to cart</button></a>
                             <span>&#8377; ${allproduct.price}</span>
                         </div>
                     </div>
@@ -119,7 +124,7 @@
                 </div>
                 <div class="product-description"></div>
                 <div class="buy-cart-button">
-                    <a href="${pageContext.request.contextPath}/customerpage/addtocart?productid=${allproduct.productId}"><button  class="addtocart">Add to cart</button></a>
+                    <a href="${pageContext.request.contextPath}/customerpage/addtocart?productid=${allproduct.productId}&category=${type}&id=<%= user.getCustomer().getCustomerId()%>"><button  class="addtocart">Add to cart</button></a>
                     <span>&#8377; ${allproduct.price}</span>
                 </div>
             </div>

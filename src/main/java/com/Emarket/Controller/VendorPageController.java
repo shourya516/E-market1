@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("/vendorpage")
 //@SessionAttributes("vendor")
 public class VendorPageController {
-    List<Product> productList=new ArrayList<>();
+
     @Autowired
     private ProductDAOImpl productDAOimpl;
     Vendor vendor=new Vendor();
@@ -41,6 +41,7 @@ public class VendorPageController {
     }
     @GetMapping("/availableproducts")
     public String getavailableproducts(@RequestParam("id") int id,Model model ) {
+        List<Product> productList=new ArrayList<>();
         productList=productDAOimpl.getproductList(id);
         List<Category> categorieList=productDAOimpl.getCategoryList();
         model.addAttribute("productList",productList);

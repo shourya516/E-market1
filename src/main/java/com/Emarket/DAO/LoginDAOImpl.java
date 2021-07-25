@@ -41,15 +41,15 @@ public class LoginDAOImpl implements LoginDAO{
                     @Override
                     public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
                         Customer customer = new Customer();
-
-                        customer.setCustName(rs.getString(1));
-                        customer.setCustMob(rs.getLong(2));
-                        customer.setCustEmail(rs.getString(3));
-                        customer.setCustPassword(rs.getString(4));
-                        customer.setCustAddress(rs.getString(5));
-                        customer.setCustCity(rs.getString(6));
-                        customer.setCustState(rs.getString(7));
-                        customer.setCustPincode(rs.getString(8));
+                        customer.setCustomerId(rs.getInt(1));
+                        customer.setCustName(rs.getString(2));
+                        customer.setCustMob(rs.getLong(3));
+                        customer.setCustEmail(rs.getString(4));
+                        customer.setCustPassword(rs.getString(5));
+                        customer.setCustAddress(rs.getString(6));
+                        customer.setCustCity(rs.getString(7));
+                        customer.setCustState(rs.getString(8));
+                        customer.setCustPincode(rs.getString(9));
                         user.setCustomer(customer);
                         return customer;
                     }
@@ -130,15 +130,16 @@ public class LoginDAOImpl implements LoginDAO{
                 @Override
                 public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
                     Dealer dealer=new Dealer();
-                    dealer.setDealerName(rs.getString(1));
-                    dealer.setDealerMob(rs.getLong(2));
-                    dealer.setDealerEmail(rs.getString(3));
-                    dealer.setLicenseNumber(rs.getString(4));
-                    dealer.setDealerPassword(rs.getString(5));
-                    dealer.setDealerAddress(rs.getString(6));
-                    dealer.setDealerCity(rs.getString(7));
-                    dealer.setDealerState(rs.getString(8));
-                    dealer.setDealerPincode(rs.getString(9));
+                    dealer.setDealerId(rs.getInt(1));
+                    dealer.setDealerName(rs.getString(2));
+                    dealer.setDealerMob(rs.getLong(3));
+                    dealer.setDealerEmail(rs.getString(4));
+                    dealer.setLicenseNumber(rs.getString(5));
+                    dealer.setDealerPassword(rs.getString(6));
+                    dealer.setDealerAddress(rs.getString(7));
+                    dealer.setDealerCity(rs.getString(8));
+                    dealer.setDealerState(rs.getString(9));
+                    dealer.setDealerPincode(rs.getString(10));
                     user.setDealer(dealer);
                     return dealer;
                 }
