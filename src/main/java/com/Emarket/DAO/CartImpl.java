@@ -1,6 +1,5 @@
 package com.Emarket.DAO;
 
-
 import com.Emarket.Model.Cart;
 import com.Emarket.Model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,9 +72,29 @@ public class CartImpl implements CartDAO {
                 Cart cartProduct1=new Cart();
                 cartProduct1.setSerialNo(rs.getInt(1));
                 cartProduct1.setCustomerId(rs.getInt(2));
+                cartProduct1.setProductId(rs.getString(3));
+                cartProduct1.setProductType(rs.getString(4));
+                cartProduct1.setProductName(rs.getString(5));
+                cartProduct1.setProductDescription(rs.getString(6));
+                cartProduct1.setVendorId(rs.getInt(7));
+                cartProduct1.setVendorDescription(rs.getString(8));
+                cartProduct1.setPrice(rs.getDouble(9));
                 return cartProduct1;
             }
         });
+    }
+
+    @Override
+    public double cartValue(int id) {
+        String query="SELECT SUM(price) from cart"+id;
+        int sum=this.jdbcTemplate.queryForObject(query,Integer.class);
+        return sum;
+    }
+
+    @Override
+    public void removeProduct(int serialNo,int id) {
+        String query="DELETE FROM cart"+id+" where serialno=?";
+        this.jdbcTemplate.update(query,serialNo);
     }
 
 }

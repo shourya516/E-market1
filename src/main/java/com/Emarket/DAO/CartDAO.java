@@ -10,5 +10,6 @@ public interface CartDAO {
         public int countCartColumn(int id);
         public void addProductToCart(String productId,int id);
         public List<Cart> cartProduct(int id);
-
+        public double cartValue(int id);
+        public void removeProduct(int serialNo,int id);
 }

@@ -11,6 +11,7 @@ public class Dealer {
   private String dealerState;
   private String dealerPincode;
   private String dealerCity;
+  private String status;
 
     public String getDealerName() {
         return dealerName;
@@ -82,6 +83,14 @@ public class Dealer {
 
     public void setDealerCity(String dealerCity) {
         this.dealerCity = dealerCity;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override

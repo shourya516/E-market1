@@ -25,13 +25,13 @@
 <head>
     <meta charset="utf-8">
     <title>Customer Page</title>
-    <link rel="stylesheet" type="text/css" href="css/agriwebsite.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/agriwebsite.css">
 </head>
 <body>
 <header>
     <div id="headerBox">
         <div class="column">
-            <a href="/home"><img src="img/logo.png" id="logoimg"></a>
+            <a href="/home"><img src="${pageContext.request.contextPath}/img/logo.png" id="logoimg"></a>
         </div>
         <div class="column">
             <nav>
@@ -48,6 +48,24 @@
         </div>
     </div>
 </header>
-
+<div id="dealer-list">
+<h3 style="text-align: center;color: black">List of Dealers to be approved</h3>
+<div class="dealer-list-container">
+    <table>
+        <tr>
+            <th class="table-column">Name</th>
+            <th class="table-column">License No.</th>
+            <th class="table-column">Approve/Reject</th>
+        </tr>
+    <c:forEach var="list" items="${unapprovedList}">
+        <tr>
+        <td class="table-column">${list.dealerName}</td>
+        <td class="table-column">${list.licenseNumber}</td>
+            <td class="table-column"><a href="${pageContext.request.contextPath}/adminpage/approve?status=verified&id=${list.dealerId}"><button class="approve-btn">Approve</button></a><a><button class="reject-btn">Reject</button></a></td>
+        </tr>
+    </c:forEach>
+    </table>
+</div>
+</div>
 </body>
 </html>

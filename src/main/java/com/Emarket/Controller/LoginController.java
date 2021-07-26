@@ -19,8 +19,7 @@ import javax.servlet.http.HttpSession;
 @SessionAttributes({"vendor","customer","dealer","admin"})
 public class LoginController {
 
-//    @Autowired
-//    private RegisterService registerService;
+
     @Autowired
     private AuthenticationService authenticationService;
 
@@ -28,8 +27,6 @@ public class LoginController {
     public String authenticateUser(@ModelAttribute("user") User user, Model model,HttpServletRequest request) {
         String page=authenticationService.pageRedirectedLogin(user);
 
-//        Customer customer1= user.getCustomer();
-//        Admin admin1= user.getAdmin();
         model.addAttribute("vendor",user.getVendor());
         model.addAttribute("customer",user.getCustomer());
         model.addAttribute("admin",user.getAdmin());

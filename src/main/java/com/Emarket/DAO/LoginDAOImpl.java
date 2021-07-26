@@ -140,6 +140,7 @@ public class LoginDAOImpl implements LoginDAO{
                     dealer.setDealerCity(rs.getString(8));
                     dealer.setDealerState(rs.getString(9));
                     dealer.setDealerPincode(rs.getString(10));
+                    dealer.setStatus(rs.getString(11));
                     user.setDealer(dealer);
                     return dealer;
                 }

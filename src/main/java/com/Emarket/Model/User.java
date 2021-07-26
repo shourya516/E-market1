@@ -9,6 +9,7 @@ public class User {
    private Dealer dealer;
    private Vendor vendor;
 
+
    public String getEmailid() {
       return emailid;
    }
@@ -64,4 +65,7 @@ public class User {
    public void setVendor(Vendor vendor) {
       this.vendor = vendor;
    }
+
+
 }
+

@@ -65,7 +65,7 @@
             <form:input type="text" class="product-in" required="true" placeholder="vendor Description" path="vendorDescription"/>
 <%--            <form:input type="text" class="product-in" required="required" path=""/>--%>
             <form:input type="number" class="product-in" required="required" placeholder="quantity" path="quantity" />
-            <form:input type="text" class="product-in1" required="required" placeholder="price" path="price" />
+            <form:input type="number" step="0.01" class="product-in1" required="required" placeholder="price" path="price" />
 
             <form:button type="submit" class="submit-prod">Submit details</form:button>
             <form:button type="reset" class="reset-prod">Reset</form:button>

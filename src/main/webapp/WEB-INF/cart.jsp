@@ -48,4 +48,8 @@
         </div>
     </div>
 </header>
+${cartValue}
+<c:forEach var="cartProduct" items="${cartList}">
+<p>${cartProduct.productName}</p>
+</c:forEach>
 
