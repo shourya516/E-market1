@@ -32,12 +32,13 @@
 </header>
 <section>
     <div class="formcontainer">
+        <p style="margin-top: 0;text-align: center;background-color: deeppink"><%@include file="message.jsp" %></p>
         <div class="signinform" id="signinformContainer">
 
             <div class="button-box">
                 <button type="button" class="toggle-btn" id="loginbtn" >Log In</button>
                 <button type="button" class="toggle-btn" id="registerbtn">Register</button>
-                <%@include file="message.jsp" %>
+<%--                <p style="margin-top: 0;text-align: center;background-color: red"><%@include file="message.jsp" %></p>--%>
             </div>
             <form:form action="/authenticate" id="login" class="input-group" method="post" modelAttribute="user">
                 <form:input type="text" class="input-field" placeholder="User Id/email" required="true" path="emailid"/>

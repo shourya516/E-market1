@@ -48,8 +48,29 @@
         </div>
     </div>
 </header>
-${cartValue}
+<c:set var="total" value="${0}"/>
 <c:forEach var="cartProduct" items="${cartList}">
-<p>${cartProduct.productName}</p>
+    <c:set var="total" value="${total + cartProduct.price}" />
 </c:forEach>
+<div class="cart-holder">
+    <h1 style="text-align: center;">Cart</h1>
+    <div class="cart-Product">
+        <table style="width: 100%;" class="cart-table">
+            <c:forEach var="cartProduct" items="${cartList}">
+            <tr>
+                <td><div class="cart-image-holder"></div></td>
+                <td>${cartProduct.productName}</td>
+                <td>${cartProduct.price}</td>
+                <td><a href="${pageContext.request.contextPath}/customerpage/remove?serialno=${cartProduct.serialNo}&id=${cartProduct.customerId}"><button class="remove-btn">Remove</button></a></td>
+            </tr>
+            </c:forEach>
+        </table>
+
+    </div>
+
+    <button class="checkout-btn">checkout</button>
+    <div class="price-box">price:${total}</div>
+
+</div>
+
 

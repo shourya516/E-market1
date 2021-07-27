@@ -27,7 +27,6 @@ public class CartImpl implements CartDAO {
                 "vendordescription varchar(400),\n" +
                 "price double)";
         this.jdbcTemplate.update(query);
-        System.out.println("table created");
     }
 
 
@@ -87,7 +86,7 @@ public class CartImpl implements CartDAO {
     @Override
     public double cartValue(int id) {
         String query="SELECT SUM(price) from cart"+id;
-        int sum=this.jdbcTemplate.queryForObject(query,Integer.class);
+        int sum=this.jdbcTemplate.update(query,Integer.class);
         return sum;
     }
 

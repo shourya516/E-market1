@@ -24,6 +24,7 @@ public class CustomerPageController {
     @Autowired
     private CartImpl cart;
 
+
     @GetMapping("/allproducts")
     public String getAllProducts(@SessionAttribute("customer") Customer customer, Model model) {
         List<Product> allProductList = productDAOimpl.getAllProduct();
@@ -42,23 +43,26 @@ public class CustomerPageController {
     }
 
     @GetMapping("/addtocart")
-    public String addTocart(@RequestParam("productid") String productId,@RequestParam("category") String Category,@RequestParam("id") int id,Model model) {
+    public String addTocart(@SessionAttribute("customer") Customer customer,@RequestParam("productid") String productId,@RequestParam("category") String Category,@RequestParam("id") int id,Model model) {
         cart.addProductToCart(productId,id);
         return "redirect:allproducts?category="+Category;
     }
 
     @GetMapping("/cart")
     public String getCartPage(@SessionAttribute("customer") Customer customer,Model model) {
+        cart.createCartTable(customer.getCustomerId());
         List<Cart> cartList=cart.cartProduct(customer.getCustomerId());
-        double totalPrice=cart.cartValue(customer.getCustomerId());
         model.addAttribute("cartList",cartList);
-        model.addAttribute("cartValue",totalPrice);
         return "cart";
     }
     @GetMapping("/remove")
-    public String removeProduct(@RequestParam("serialno") int Serialno) {
-        return "reditect:/cart";
+    public String removeProduct(@RequestParam("serialno") int serialNo,@RequestParam("id") int id) {
+        cart.removeProduct(serialNo,id);
+        return "redirect:cart";
     }
+
+
+
 
 }
 

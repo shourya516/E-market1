@@ -2,7 +2,6 @@
 <%@ page import="com.Emarket.Model.Product" %>
 <%@ page import="java.util.List" %>
 <%
-
     User user=(User)session.getAttribute("current-user");
     if(user==null) {
         session.setAttribute("message","Please login");
@@ -14,8 +13,8 @@
         response.sendRedirect("login");
         return;
     }
-
 %>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -49,13 +48,75 @@
         </div>
     </div>
 </header>
-<section id="section1">
-    <h1>thankyou for choosing E-market</h1>
+<div id="section1">
+    <div id="intro">
+        <h1>Thankyou for choosing E-market</h1>
+        <h3>We Try our best to provide you the freshest product int the market</h3>
+        <a href="${pageContext.request.contextPath}/customerpage/allproducts?category=all"><button class="shop-now">Shop Now</button></a>
+
+    </div>
     <div class="skewed"></div>
-
-</section>
-
 </div>
 
+<div class="page-discription">
+    <h1 style="text-align: center;">How we work</h1>
+    <div class="motive">
+        <div class="consumerinfo">
+            <h4>We Contact Farmers</h4>
+            <img src="img/contact_farmer1.jpg" style="margin-left: 70px; height: 170px;width: 300px;">
+        </div>
+        <div class="consumerinfo">
+            <h4>Farmer process their products </h4>
+            <img src="img/farmprocess.jpg" style="margin-left: 70px;">
+        </div>
+        <div class="consumerinfo">
+            <h4> They Sell on our Website</h4>
+            <img src="img/sellProduct.jpg" style="margin-left:70px;">
+        </div>
+    </div>
+</div>
+<div class="qualitychecks">
+    <h1 style="text-align: center;">Quality check</h1>
+    <div class="qualitycheck-steps">
+        <table class="qualitycheck-table">
+            <tr>
+                <td style="padding-left: 180px;">&#9989 Moisture Free</td>
+                <td  style="padding-left: 180px;">&#9989 Free From adultration</td>
+            </tr>
+            <tr>
+                <td  style="padding-left: 180px;">&#9989 Throughly Cleaned</td>
+                <td style="padding-left: 180px;">&#9989 Right Grade</td>
+            </tr>
+            <tr>
+                <td  style="padding-left: 180px;">&#9989 Free From Infestation</td>
+                <td  style="padding-left: 180px;">&#9989 Free From Foreign Matter</td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+<footer>
+    <div class="social-footer">
+        <div class="centre">
+            <img class="imgclass3" src="img/twitter.png" alt="twitter" height="48" width="55">
+        </div>
+
+    </div>
+    <div class="social-footer">
+        <div class="centre">
+            <img class="imgclass3" src="img/facebook.png" alt="facebook" height="55" width="28">
+        </div>
+
+    </div>
+    <div class="social-footer1">
+        <div class="centre">
+            <img  class="imgclass3"src="img/instagram.png" alt="instagram" height="52" width="52">
+        </div>
+
+    </div>
+    <div class="copyright">
+        <span> &copy; Copyright 2021 E-Market - Made with &hearts; in India</span>
+    </div>
+</footer>
 </body>
 </html>

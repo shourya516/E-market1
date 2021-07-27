@@ -390,7 +390,7 @@ footer {
 #Dealer {
     left: 450px;
 }
-
+/*---------------------------------------------------------------------------------------------------*/
 /*Css for customer other pages*/
 #welcomeholder{
 
@@ -428,6 +428,60 @@ footer {
     border-color: transparent #fff transparent transparent;
     border-style: solid;
 }
+
+#intro {
+    color: white;
+    margin-left: 70px;
+    margin-top: 100px;
+}
+.shop-now {
+    padding: 15px;
+    background: transparent;
+    color: white;
+    font-size: medium;
+    border-radius: 25px;
+    border: 2px solid white;
+    cursor: pointer;
+    font-weight: bold;
+}
+.motive {
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+}
+.consumerinfo {
+    width: 33%;
+    float: left;
+    height: auto;
+}
+h4 {
+    text-align: center;
+}
+.qualitychecks {
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
+    background-color: #f6f8fa;
+}
+.qualitycheck-steps {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.qualitycheck-table {
+    width: 100%;
+}
+.qualitycheck-table td {
+    width: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+
+/*---------------------------------------------------------------------------------------------------*/
 .addproduct {
     width: 100%;
     height:100vh;
@@ -603,7 +657,7 @@ a:link {
     margin-left: 400px;
     width: 40%;
     height: 400px;
-    overflow-y: scroll ;
+    overflow-y: auto ;
 }
 .table-column {
     border: 1px solid black;
@@ -621,5 +675,60 @@ a:link {
     color: white;
     font-weight: bold;
     margin-left: 10px;
+}
+/*-------------------------------------------------------------------------------------------------*/
+/*CART PAGE*/
+.cart-holder {
+    width: 100%;
+    height: 100vh;
+    /* background-color: rebeccapurple; */
+}
+.cart-Product {
+    width: 60%;
+    height: 500px;
+    margin-left: 250px;
+    background-color: white;
+    position: absolute;
+    margin-top: 40px;
+    overflow-y: auto;
+
+}
+.cart-table {
+    width: 100%;
+}
+.cart-table td{
+    width:25%;
+
+}
+.cart-image-holder {
+    height: 110px;
+    width: 110px;
+    border: 1px solid black;
+    background-image: url(../img/vegetabesbanner3.jpg);
+    background-size: cover;
+}
+.remove-btn {
+    padding: 10px;
+    color: white;
+    background-color: firebrick;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+}
+.checkout-btn {
+    float: right;
+    margin-right: 40px;
+    padding: 10px;
+    color: white;
+    background-color: #6dc77a;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+}
+.price-box {
+    width: 90px;
+    height: 30px;
+    float: right;
+    margin-right: 30px;
 }
 
