@@ -7,8 +7,14 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+//import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -83,18 +89,37 @@ public class CartImpl implements CartDAO {
         });
     }
 
-    @Override
-    public double cartValue(int id) {
-        String query="SELECT SUM(price) from cart"+id;
-        int sum=this.jdbcTemplate.update(query,Integer.class);
-        return sum;
-    }
+
 
     @Override
     public void removeProduct(int serialNo,int id) {
         String query="DELETE FROM cart"+id+" where serialno=?";
         this.jdbcTemplate.update(query,serialNo);
     }
+
+    @Override
+    public void order(List<Cart> cartProduct) {
+        Date date = Calendar.getInstance().getTime();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String strDate = dateFormat.format(date);
+        String query="insert into customerordertable(customerid,productid,productname,price,date) values(?,?,?,?,?)";
+        String quer1="UPDATE product_table set quantity=quantity-1 where productid=?";
+        List<Object[]> cartProductList=new ArrayList<Object[]>();
+        for(Cart cart:cartProduct) {
+            Object[] objectArray={ cart.getCustomerId(),cart.getProductId(),cart.getProductName(),cart.getPrice(),strDate};
+            cartProductList.add(objectArray);
+            this.jdbcTemplate.update(quer1,cart.getProductId());
+        }
+        this.jdbcTemplate.batchUpdate(query,cartProductList);
+    }
+
+    @Override
+    public void deleteCustomerCart(int id) {
+        String query="DROP TABLE cart"+id;
+        this.jdbcTemplate.update(query);
+        System.out.println("cart deleted");
+    }
+
 
 }
 

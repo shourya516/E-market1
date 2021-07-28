@@ -12,6 +12,7 @@
         response.sendRedirect("login");
         return;
     }
+
 %>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -68,7 +69,7 @@
 
     </div>
 
-    <button class="checkout-btn">checkout</button>
+    <a href="${pageContext.request.contextPath}/customerpage/checkout?amount=${total}"><button class="checkout-btn">checkout</button></a>
     <div class="price-box">price:${total}</div>
 
 </div>

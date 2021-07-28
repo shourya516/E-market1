@@ -64,7 +64,7 @@ public class ProductDAOImpl implements ProductDAO {
     }
     @Override
     public List<Product> getAllProduct() {
-        String query="select * from product_table";
+        String query="select * from product_table where instock=?";
         return this.jdbcTemplate.query(query, new RowMapper() {
             @Override
             public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -80,30 +80,30 @@ public class ProductDAOImpl implements ProductDAO {
                 product1.setInStock(rs.getString(9));
                 return product1;
             }
-        });
+        },"available");
     }
 
-    @Override
-    public Product addToCart(String productId) {
-        String query="select * from product_table where productid=?";
-        Product product= (Product) this.jdbcTemplate.queryForObject(query, new RowMapper() {
-            @Override
-            public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
-                Product product1=new Product();
-                product1.setProductId(rs.getString(1));
-                product1.setProductType(rs.getString(2));
-                product1.setProductName(rs.getString(3));
-                product1.setProductDescription(rs.getString(4));
-                product1.setVendorId(rs.getInt(5));
-                product1.setVendorDescription(rs.getString(6));
-                product1.setQuantity(rs.getInt(7));
-                product1.setPrice(rs.getDouble(8));
-                product1.setInStock(rs.getString(9));
-                return product1;
-            }
-        },productId);
-        return product;
+//    @Override
+//    public Product addToCart(String productId) {
+//        String query="select * from product_table where productid=?";
+//        Product product= (Product) this.jdbcTemplate.queryForObject(query, new RowMapper() {
+//            @Override
+//            public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+//                Product product1=new Product();
+//                product1.setProductId(rs.getString(1));
+//                product1.setProductType(rs.getString(2));
+//                product1.setProductName(rs.getString(3));
+//                product1.setProductDescription(rs.getString(4));
+//                product1.setVendorId(rs.getInt(5));
+//                product1.setVendorDescription(rs.getString(6));
+//                product1.setQuantity(rs.getInt(7));
+//                product1.setPrice(rs.getDouble(8));
+//                product1.setInStock(rs.getString(9));
+//                return product1;
+//            }
+//        },productId);
+//        return product;
     }
 
 
-}
+

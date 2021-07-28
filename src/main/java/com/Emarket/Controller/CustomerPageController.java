@@ -61,8 +61,22 @@ public class CustomerPageController {
         return "redirect:cart";
     }
 
-
-
+    @GetMapping("/checkout")
+    public String checkout(@RequestParam("amount") String amount,Model model) {
+        model.addAttribute("totalprice",amount);
+        return "payment";
+    }
+    @GetMapping("/pay")
+    public String confirmOrder(@SessionAttribute("customer") Customer customer) {
+        List<Cart> cartList=cart.cartProduct(customer.getCustomerId());
+        cart.order(cartList);
+        cart.deleteCustomerCart(customer.getCustomerId());
+        return "redirect:/customerpage";
+    }
+    @GetMapping("/history")
+    public String getHistoryPage() {
+        return null;
+    }
 
 }
 
